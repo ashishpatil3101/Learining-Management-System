@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config();
 
 //db Connection 
 const DbConnect =  require('./config/dbConnect');
+const UserRouts = require('./routes/userRoute');
 
 const startAndSetupServer = async () =>{
 
@@ -13,7 +14,7 @@ const startAndSetupServer = async () =>{
     App.use( bodyparser.json());
     App.use( bodyparser.urlencoded({ extended: true}));
 
-    // App.use('/Api' , );
+     App.use('/Api/user' , UserRouts );
 
     App.listen( PORT , ()=>{
          
