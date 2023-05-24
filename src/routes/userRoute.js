@@ -20,11 +20,11 @@ route.post('/' , createuser );
 route.post('/login', loginUser )
 
 route.get('/:id', getUser );
+route.get('/', authMiddleware,isAdmin, getAllUser );
 
-route.get('/', getAllUser );
 route.put('/:id', authMiddleware, updateUser );
 
-route.delete('/:id' , deleteUser );
+route.delete('/:id' ,authMiddleware, deleteUser );//user can delete himself
 
 module.exports = route;
 

@@ -161,10 +161,10 @@ const deleteUser =   async( req, res )=>{
     } 
     catch (error) {
         
-        console.log('not able to fetched  the users')
+        console.log('not able to delete  A user')
         return res.status(500).json({
             success: false,
-            message: 'not able to fetched the  users',
+            message: 'not able to delete A  user',
             error: error
         })
     }
